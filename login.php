@@ -57,8 +57,8 @@ if(count($_POST)>0) {
     <body data-spy="scroll" data-target=".navbar" data-offset="200">
 <div class="container" style="margin-top:100px;">
     <form name="loginForm" action="" method="post">
-        <div class="message"><?php if($message!="") { echo $message; } ?></div>
         <h3 align="center">Enter Login Details</h3>
+        <div class="message"><h4 style="color:red;"><?php if($message!="") { echo $message; } ?></h4></div>
         <h4>Username:</h4>
         <input type="text" name="username" required>
         <h4>Password:</h4>
