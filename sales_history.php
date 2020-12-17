@@ -16,7 +16,7 @@
     include 'header.php';?>
 <div class="container-fluid" style="margin-top:100px;">
     <table>
-        <tr><td>#</td><td>Name</td><td>Quantity</td><td>Price</td><td>Total</td></tr>
+        <tr><td>#</td><td>Name</td><td>Time</td><td>Quantity</td><td>Price</td><td>Total</td></tr>
         <?php
         $sql = "SELECT * FROM sales_hist ORDER BY id DESC LIMIT 15";
         $result = $conn->query($sql);
@@ -30,7 +30,7 @@
                     $row2 = $result2->fetch_assoc();
                     $total = $row['quantity']*$row2['price'];
                 ?>
-                <tr><td><?php echo $count; ?></td><td><?php echo $row2['name']; ?></td><td><?php echo $row['quantity']; ?></td>
+                <tr><td><?php echo $count; ?></td><td><?php echo $row2['name']; ?></td><td><?php echo $row['date_time']; ?></td><td><?php echo $row['quantity']; ?></td>
                 <td><?php echo $row2['price']; ?></td><td><?php echo $total; ?></td></tr>
                 <?php
                 }
